@@ -39,10 +39,8 @@ gitOverride (current: {
         ./opencl.patch
         ./disk_cache-include-dri-driver-path-in-cache-key.patch
         ./gbm-backend.patch
-        (final.fetchpatch {
-          url = "https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/25659.patch";
-          hash = "sha256-qb+2Flg3V+wf1k8Y9A3DDoAdgn9+JSmOwERcMxypfTA=";
-        })
+        # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10071
+        ./gs-fast-revert.patch
       ];
     # expose gbm backend and rename vendor (if necessary)
     outputs =
